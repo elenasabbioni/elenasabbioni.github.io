@@ -239,6 +239,106 @@ body {
   color: #722f37;
 }
 
+/* =========================
+   INNER PAGES
+   ========================= */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 75px 7% 110px;
+}
+
+.page-heading {
+  margin-bottom: 55px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+
+  color: #b77b82;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  color: #722f37;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.about-text {
+  max-width: 700px;
+}
+
+.about-text p {
+  margin-bottom: 24px;
+
+  color: #5f5053;
+
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.about-text strong {
+  color: #49383c;
+  font-weight: 600;
+}
+
+
+/* Research interests */
+
+.interests {
+  padding-left: 28px;
+
+  border-left: 1px solid #dfc5c2;
+}
+
+.interests h2 {
+  margin-bottom: 22px;
+
+  color: #722f37;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.interest-list {
+  list-style: none;
+}
+
+.interest-list li {
+  padding: 11px 0;
+
+  color: #6b565a;
+
+  border-bottom: 1px solid #eadbd8;
+
+  font-size: 0.95rem;
+}
+
+.interest-list li:first-child {
+  padding-top: 0;
+}
 
 /* =========================
    FOOTER
@@ -259,7 +359,23 @@ footer {
    ========================= */
 
 @media (max-width: 850px) {
+  .page {
+    padding-top: 55px;
+  }
 
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .interests {
+    padding-left: 0;
+    padding-top: 28px;
+
+    border-left: none;
+    border-top: 1px solid #dfc5c2;
+  }
+   
   .site-header {
     padding: 24px 6%;
   }
