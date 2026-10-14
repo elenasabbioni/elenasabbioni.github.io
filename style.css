@@ -1,5 +1,10 @@
+/* =========================================================
+   ELENA SABBIONI — PERSONAL ACADEMIC WEBSITE
+   ========================================================= */
+
+
 /* =========================
-   BASE
+   RESET & BASE
    ========================= */
 
 * {
@@ -13,9 +18,12 @@ html {
 }
 
 body {
+  min-height: 100vh;
+
   font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #faf6f1;
   color: #3d3033;
+
   line-height: 1.6;
 }
 
@@ -30,6 +38,7 @@ body {
 }
 
 .navbar {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -40,11 +49,13 @@ body {
 
 .logo {
   color: #722f37;
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.45rem;
   font-weight: 600;
-  text-decoration: none;
+
   letter-spacing: 0.02em;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -59,8 +70,10 @@ body {
   position: relative;
 
   color: #5c4a4e;
+
   font-size: 0.95rem;
   font-weight: 400;
+
   text-decoration: none;
 
   transition: color 0.25s ease;
@@ -93,15 +106,17 @@ body {
 
 
 /* =========================
-   HERO
+   HOME — HERO
    ========================= */
 
 .hero {
+  width: 90%;
+  max-width: 760px;
+
   min-height: calc(100vh - 170px);
 
-  max-width: 760px;
   margin: 0 auto;
-  padding: 70px 30px 90px;
+  padding: 60px 0 85px;
 
   display: flex;
   flex-direction: column;
@@ -118,77 +133,74 @@ body {
   width: 190px;
   height: 190px;
 
+  margin-bottom: 30px;
+
   object-fit: cover;
   object-position: center 30%;
 
+  border: 5px solid #f0dedb;
   border-radius: 50%;
 
-  border: 5px solid #f0dedb;
-
-  box-shadow:
-    0 8px 30px rgba(91, 45, 52, 0.12);
-
-  margin-bottom: 30px;
+  box-shadow: 0 8px 30px rgba(91, 45, 52, 0.12);
 }
 
 
 /* Name */
 
 .hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  margin-bottom: 18px;
 
   color: #722f37;
 
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.7rem, 6vw, 4.6rem);
   font-weight: 500;
 
   line-height: 1.1;
-
-  margin-bottom: 18px;
 }
 
 
 /* Academic position */
 
 .hero-title {
+  margin-bottom: 5px;
+
   color: #4f3d41;
 
   font-size: 1.25rem;
   font-weight: 500;
-
-  margin-bottom: 5px;
 }
 
 
 /* Institution */
 
 .hero-affiliation {
+  margin-bottom: 28px;
+
   color: #9b626a;
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.08rem;
   font-style: italic;
-
-  margin-bottom: 28px;
 }
 
 
-/* Introduction */
+/* Short introduction */
 
 .hero-description {
   max-width: 650px;
+
+  margin-bottom: 34px;
 
   color: #66575a;
 
   font-size: 1.05rem;
   line-height: 1.85;
-
-  margin-bottom: 34px;
 }
 
 
 /* =========================
-   BUTTONS
+   HOME — BUTTONS
    ========================= */
 
 .hero-links {
@@ -213,10 +225,12 @@ body {
   color: #fffaf7;
 
   font-size: 0.92rem;
+  text-align: center;
   text-decoration: none;
 
   transition:
     background-color 0.25s ease,
+    border-color 0.25s ease,
     color 0.25s ease,
     transform 0.25s ease;
 }
@@ -239,18 +253,24 @@ body {
   color: #722f37;
 }
 
+
 /* =========================
    INNER PAGES
    ========================= */
 
 .page {
-  max-width: 1100px;
+  width: 86%;
+  max-width: 1200px;
+
   margin: 0 auto;
-  padding: 75px 7% 110px;
+  padding: 65px 0 100px;
 }
 
+
+/* Page heading */
+
 .page-heading {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
 }
 
 .eyebrow {
@@ -260,6 +280,7 @@ body {
 
   font-size: 0.78rem;
   font-weight: 600;
+
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -270,6 +291,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-weight: 500;
+
   line-height: 1.1;
 }
 
@@ -280,13 +302,21 @@ body {
 
 .about-content {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr);
-  gap: 80px;
+
+  grid-template-columns:
+    minmax(0, 1.8fr)
+    minmax(250px, 0.8fr);
+
+  gap: 55px;
+
   align-items: start;
 }
 
+
+/* Main biography */
+
 .about-text {
-  max-width: 700px;
+  max-width: none;
 }
 
 .about-text p {
@@ -298,13 +328,19 @@ body {
   line-height: 1.9;
 }
 
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
 .about-text strong {
   color: #49383c;
   font-weight: 600;
 }
 
 
-/* Research interests */
+/* =========================
+   ABOUT — RESEARCH INTERESTS
+   ========================= */
 
 .interests {
   padding-left: 28px;
@@ -340,11 +376,14 @@ body {
   padding-top: 0;
 }
 
+
 /* =========================
    FOOTER
    ========================= */
 
 footer {
+  width: 100%;
+
   padding: 25px 20px 35px;
 
   color: #9b8589;
@@ -355,27 +394,13 @@ footer {
 
 
 /* =========================
-   MOBILE
+   TABLET
    ========================= */
 
 @media (max-width: 850px) {
-  .page {
-    padding-top: 55px;
-  }
 
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
+  /* Navigation */
 
-  .interests {
-    padding-left: 0;
-    padding-top: 28px;
-
-    border-left: none;
-    border-top: 1px solid #dfc5c2;
-  }
-   
   .site-header {
     padding: 24px 6%;
   }
@@ -391,6 +416,9 @@ footer {
 
     gap: 12px 20px;
   }
+
+
+  /* Home */
 
   .hero {
     min-height: auto;
@@ -408,6 +436,35 @@ footer {
     font-size: 1.1rem;
   }
 
+
+  /* Inner pages */
+
+  .page {
+    width: 88%;
+
+    padding: 45px 0 70px;
+  }
+
+  .page-heading {
+    margin-bottom: 40px;
+  }
+
+
+  /* About */
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .interests {
+    padding-top: 28px;
+    padding-left: 0;
+
+    border-top: 1px solid #dfc5c2;
+    border-left: none;
+  }
+
 }
 
 
@@ -416,6 +473,8 @@ footer {
    ========================= */
 
 @media (max-width: 500px) {
+
+  /* Navigation */
 
   .logo {
     font-size: 1.3rem;
@@ -429,9 +488,14 @@ footer {
     font-size: 0.88rem;
   }
 
+
+  /* Home */
+
   .hero {
-    padding-left: 22px;
-    padding-right: 22px;
+    width: 88%;
+
+    padding-top: 45px;
+    padding-bottom: 60px;
   }
 
   .profile-photo {
@@ -445,6 +509,25 @@ footer {
 
   .hero-links {
     width: 100%;
+  }
+
+
+  /* Inner pages */
+
+  .page {
+    width: 88%;
+
+    padding-top: 35px;
+    padding-bottom: 60px;
+  }
+
+  .page-heading {
+    margin-bottom: 35px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
 }
