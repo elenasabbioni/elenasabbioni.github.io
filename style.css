@@ -1,90 +1,334 @@
+/* =========================
+   BASE
+   ========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #faf6f1;
+  color: #3d3033;
   line-height: 1.6;
 }
 
-header {
-  min-height: 100vh;
-  padding: 2rem 8%;
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.site-header {
+  width: 100%;
+  padding: 28px 7%;
 }
 
-nav {
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
+  color: #722f37;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
   display: flex;
-  list-style: none;
+  align-items: center;
   gap: 2rem;
+
+  list-style: none;
 }
 
 .nav-links a {
-  color: white;
+  position: relative;
+
+  color: #5c4a4e;
+  font-size: 0.95rem;
+  font-weight: 400;
   text-decoration: none;
+
+  transition: color 0.25s ease;
 }
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #722f37;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background-color: #b77b82;
+
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
-  margin-top: 10rem;
-  max-width: 700px;
+  min-height: calc(100vh - 170px);
+
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 70px 30px 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 }
 
-.hero h2 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+
+/* Profile picture */
+
+.profile-photo {
+  width: 190px;
+  height: 190px;
+
+  object-fit: cover;
+  object-position: center 30%;
+
+  border-radius: 50%;
+
+  border: 5px solid #f0dedb;
+
+  box-shadow:
+    0 8px 30px rgba(91, 45, 52, 0.12);
+
+  margin-bottom: 30px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #cbd5e1;
+
+/* Name */
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #722f37;
+
+  font-size: clamp(2.7rem, 6vw, 4.6rem);
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  margin-bottom: 18px;
+}
+
+
+/* Academic position */
+
+.hero-title {
+  color: #4f3d41;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  margin-bottom: 5px;
+}
+
+
+/* Institution */
+
+.hero-affiliation {
+  color: #9b626a;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-style: italic;
+
+  margin-bottom: 28px;
+}
+
+
+/* Introduction */
+
+.hero-description {
+  max-width: 650px;
+
+  color: #66575a;
+
+  font-size: 1.05rem;
+  line-height: 1.85;
+
+  margin-bottom: 34px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 24px;
-  background: #3b82f6;
-  color: white;
+
+  min-width: 125px;
+
+  padding: 11px 23px;
+
+  border: 1px solid #722f37;
+  border-radius: 30px;
+
+  background-color: #722f37;
+  color: #fffaf7;
+
+  font-size: 0.92rem;
   text-decoration: none;
-  border-radius: 8px;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.section {
-  padding: 6rem 8%;
+.btn:hover {
+  background-color: #8b4650;
+  border-color: #8b4650;
+
+  transform: translateY(-2px);
 }
 
-.section h2 {
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+.btn-outline {
+  background-color: transparent;
+  color: #722f37;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+.btn-outline:hover {
+  background-color: #f0dedb;
+  border-color: #b77b82;
+  color: #722f37;
 }
 
-.card {
-  background: #1e293b;
-  padding: 2rem;
-  border-radius: 12px;
-}
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
+  padding: 25px 20px 35px;
+
+  color: #9b8589;
+
+  font-size: 0.82rem;
   text-align: center;
-  padding: 2rem;
-  color: #94a3b8;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    padding: 24px 6%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px 20px;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 55px;
+    padding-bottom: 70px;
+  }
+
+  .profile-photo {
+    width: 165px;
+    height: 165px;
+  }
+
+  .hero-title {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 500px) {
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .profile-photo {
+    width: 145px;
+    height: 145px;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+  }
+
+  .hero-links {
+    width: 100%;
+  }
+
 }
